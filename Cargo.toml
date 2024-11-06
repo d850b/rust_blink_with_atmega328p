@@ -1,7 +1,7 @@
 [package]
-name = "atmega328p-examples"
+name = "blink_avr-hal_standalone"
 version = "0.0.0"
-authors = ["Rahix <rahix@rahix.de>", "Armandas Jarušauskas <jarusauskas@gmail.com>"]
+authors = [""]
 edition = "2021"
 publish = false
 
@@ -17,7 +17,8 @@ version = "0.2.3"
 package = "embedded-hal"
 
 [dependencies.atmega-hal]
-path = "../../mcu/atmega-hal/"
+#path = "../../mcu/atmega-hal/"
+git = "https://github.com/Rahix/avr-hal.git"
 features = ["atmega328p"]
 
 # The latest releases of `proc-macro2` do not support the rust toolchain that
@@ -26,7 +27,14 @@ features = ["atmega328p"]
 [build-dependencies.proc-macro2]
 version = "=1.0.79"
 
-[profile.release]
-opt-level = 'z'
+[profile.dev]
+panic = "abort"
 lto = true
-strip = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "z"
