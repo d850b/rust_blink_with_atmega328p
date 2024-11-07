@@ -1,0 +1,8 @@
+
+
+#avrdude -c buspirate -P /dev/ttyACM0 -p m328p  -v 2>&1 | less
+
+avrdude -c buspirate -P /dev/ttyACM0 -p m328p  -U flash:w:target/avr-atmega328p/debug/blink_avr-hal_standalone.elf:e
+#avrdude -c buspirate -P /dev/ttyACM0 -p m328p  -U flash:w:target/avr-atmega328p/release/blink_avr-hal_standalone.elf:e
+
+
