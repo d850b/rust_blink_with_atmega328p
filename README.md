@@ -5,3 +5,5 @@ Derived from the examples given in the avr-hal github repo. All credit goes ther
 It works on the bare "chip" on a breadboard, no special hardware, except wires, a led and a resistor. 
 Needs some form of programmer, of course, i use a "buspirate". But a raspberry pi would to the job.
 
+And don't forget to read this:
+https://book.avr-rust.org/
