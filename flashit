@@ -1,10 +1,10 @@
 build=debug
 # TODO: get this from cargo toml.
-target=target/avr-atmega328p/$build/blink_avr-hal_standalone.elf
+target=target/avr-none/$build/blink_avr-hal_standalone.elf
 
 avrdude -c buspirate -P /dev/ttyACM0 -p m328p  -U flash:w:$target:e
 
-# check chip.
+# check chip example.
 #avrdude -c buspirate -P /dev/ttyACM0 -p m328p  -v 2>&1 | less
 
 # fuse example, calculated with https://www.engbedded.com/fusecalc/
